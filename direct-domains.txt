@@ -137,3 +137,8 @@ skyapi.live.net
 roaming.officeapps.live.com
 blob.core.windows.net
 default.exp-tas.com
+freyparts.cn
+zhaopeiyun.com
+cassmall.com
+apbenben.com
+mubu.com
