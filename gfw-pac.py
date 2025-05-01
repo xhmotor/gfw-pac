@@ -8,20 +8,12 @@ import ipaddress
 
 def parse_args():
     parser = ArgumentParser()
-    parser.add_argument('-f', '--file', dest='output', required=True,
-                        help='输出的PAC文件名', metavar='PAC')
-    parser.add_argument('-p', '--proxy', dest='proxy', required=True,
-                        help='代理服务器, '
-                             '例如, "PROXY 127.0.0.1:3128;"',
-                        metavar='PROXY')
-    parser.add_argument('--proxy-domains', dest='user_rule',
-                        help='直接通过代理域名的文件，每行一个')
-    parser.add_argument('--direct-domains', dest='direct_rule',
-                        help='直连的域名文件，每行一个')
-    parser.add_argument('--localtld-domains', dest='localtld_rule',
-                        help='本地 TLD 规则文件, 不走代理, 每行一个，以 . 开头')
-    parser.add_argument('--ip-file', dest='ip_file', required=True,
-                        help='中国IP地址段文件')
+    ./gfw-pac.py -f gfw.pac \
+             -p "PROXY 192.168.1.200:3128; DIRECT" \
+             --proxy-domains=proxy-domains.txt \
+             --direct-domains=direct-domains.txt \
+             --localtld-domains=local-tlds.txt \
+             --ip-file=cidrs-cn.txt
     return parser.parse_args()
 
 def convert_cidr(cidr):
