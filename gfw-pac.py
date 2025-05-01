@@ -9,7 +9,7 @@ import ipaddress
 def parse_args():
     parser = ArgumentParser()
     ./gfw-pac.py -f gfw.pac \
-             -p "PROXY 192.168.1.200:3128; DIRECT" \
+             -p "http 127.0.0.1:11973; DIRECT" \
              --proxy-domains=proxy-domains.txt \
              --direct-domains=direct-domains.txt \
              --localtld-domains=local-tlds.txt \
